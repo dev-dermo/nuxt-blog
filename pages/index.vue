@@ -5,25 +5,26 @@
     </section>
 
     <section class="featured-posts">
-      <nuxt-link :to="'/posts/' + 1" class="post-preview">
-        <article>
-          <div class="post-thumbnail" style="background-image: url(https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);"></div>
-          <div class="post-content">
-            <h1 class="title">Post Title 1</h1>
-            <p>First preview text.</p>
-          </div>
-        </article>
-      </nuxt-link>
+      <PostPreview
+        id="1"
+        title="This is a title"
+        previewText="More information coming soon."
+        thumbnail="https://images.pexels.com/photos/2382681/pexels-photo-2382681.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      />
 
-      <nuxt-link :to="'/posts/' + 2" class="post-preview">
-        <article>
-          <div class="post-thumbnail" style="background-image: url(https://images.pexels.com/photos/2068975/pexels-photo-2068975.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);"></div>
-          <div class="post-content">
-            <h1 class="title">Post Title 2</h1>
-            <p>Second preview text.</p>
-          </div>
-        </article>
-      </nuxt-link>
+      <PostPreview
+        id="2"
+        title="This is another title"
+        previewText="More information coming soon."
+        thumbnail="https://images.pexels.com/photos/2382681/pexels-photo-2382681.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      />
+
+      <PostPreview
+        id="3"
+        title="Yet another title"
+        previewText="More information coming soon."
+        thumbnail="https://images.pexels.com/photos/2382681/pexels-photo-2382681.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      />
     </section>
   </div>
 </template>
@@ -40,6 +41,7 @@ export default {}
   box-sizing: border-box;
   background-position: center;
   background-size: cover;
+  background-image: url('~assets/images/canyon.jpeg');
 }
 
 .intro h1 {
@@ -70,41 +72,5 @@ export default {}
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-}
-
-.post-preview {
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 2px #ccc;
-  background-color: white;
-  width: 90%;
-}
-
-a {
-  text-decoration: none;
-  color: black;
-}
-
-@media (min-width: 850px) {
-  .post-preview {
-    width: 400px;
-    margin: 10px;
-  }
-}
-
-.post-thumbnail {
-  width: 100%;
-  height: 200px;
-  background-position: center;
-  background-size: cover;
-}
-
-.post-content {
-  padding: 10px;
-  text-align: center;
-}
-
-a:hover .post-content,
-a:active .post-content {
-  background-color: #ccc;
 }
 </style>
